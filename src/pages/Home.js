@@ -12,7 +12,7 @@ const Home = () => {
         let tl = gsap.timeline();
 
         tl.to('.home__circle', {
-            y: 0
+            y: '-5rem'
         })
         tl.to('.home__circle', {
             scale: 15,
