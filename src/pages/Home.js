@@ -1,9 +1,6 @@
 import gsap from 'gsap';
-import { NavLink } from 'react-router-dom';
 import Header from '../components/Header';
 import '../styles/pages/home.css';
-import ReactDOM from 'react-dom';
-import DelayLink from 'react-delay-link';
 
 const Home = () => {
 
@@ -39,9 +36,9 @@ const Home = () => {
                         because we’ll give you a truly out of this world experience!</h3>
                 </article>
 
-                <NavLink delay={2000} to='/destination' className="home__circle" onClick={changePage}>
+                <article className="home__circle" onClick={changePage}>
                     <p className="home__circle__text">Explore</p>
-                </NavLink>
+                </article>
 
             </main>
         </>
