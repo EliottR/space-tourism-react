@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+h1 {
+  color: white;
+}
+
 .header {
   margin: 1.5rem 1.5rem 0 1.5rem;
   display: -webkit-box;
@@ -77,6 +81,31 @@
 .active {
   font-weight: bold;
   color: #D0D6F9;
+}
+
+.bg-home, .bg-destination, .bg-crew, .bg-technology {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-transition: background-image 0.8s;
+  transition: background-image 0.8s;
+}
+
+.bg-home {
+  background-image: url("../assets/home/background-home-mobile.jpg");
+}
+
+.bg-destination {
+  background-image: url("../assets/destination/background-destination-mobile.jpg");
+}
+
+.bg-crew {
+  background-image: url("../assets/crew/background-crew-mobile.jpg");
+}
+
+.bg-technology {
+  background-image: url("../assets/technology/background-technology-mobile.jpg");
 }
 
 .home {

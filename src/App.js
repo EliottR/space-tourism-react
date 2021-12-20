@@ -7,11 +7,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NotFound from './pages/NotFound';
 
 import './styles/main.css';
-
+import Background from './components/Background';
 
 function App() {
   return (
+
     <BrowserRouter>
+      <Background />
       <Routes>
         <Route path='/' exact element={<Home />} />
         <Route path='/crew' exact element={<Crew />} />

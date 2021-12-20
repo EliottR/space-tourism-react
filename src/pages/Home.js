@@ -1,13 +1,32 @@
 import gsap from 'gsap';
 import Header from '../components/Header';
-import '../styles/pages/home.css';
+import { useNavigate } from "react-router-dom";
+
 
 const Home = () => {
 
+    let navigate = useNavigate();
+
     function changePage() {
+
+        setTimeout(() => {
+            navigate("/destination");
+        }, 900);
+
+
         gsap.to('.home__circle__text', {
             marginBottom: 0
         }, 0)
+        gsap.to('.home__circle__text', {
+            opacity: 0,
+            duration: 0.5,
+            delay: 0.3
+        })
+        gsap.to('.home__text', {
+            opacity: 0,
+            duration: 0.2,
+            delay: 0.5
+        })
 
         let tl = gsap.timeline();
 
@@ -16,7 +35,7 @@ const Home = () => {
         })
         tl.to('.home__circle', {
             scale: 15,
-            transformOrigin: 'center'
+            transformOrigin: 'center center'
         }, '-=0.1')
         tl.to('.home__circle', {
             opacity: 0
