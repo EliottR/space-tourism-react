@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+//FONTS
+@mixin bellefair($size) {
+    font-family: 'Bellefair', serif;
+    font-size: $size;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+@mixin barlow($size, $text-transform: initial){
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: $size;
+    text-transform: $text-transform;
+}
+
+//FUNCTIONS
+@mixin wh($width, $height: $width){
+    width: $width;
+    height: $height;
+}

@@ -1,0 +1,57 @@
+.home{
+    margin-top: 5rem;
+
+    &__text{
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 0 1.5rem;
+
+        &__h2{
+            @include barlow(1rem, uppercase);
+            letter-spacing: 2.7px;
+            color: $light-purple;
+            text-align: center;
+            font-weight: normal;
+        }
+        
+        &__h1{
+            @include bellefair(80px);
+            line-height: 100px;
+            text-align: center;
+        }
+
+        &__h3{
+            @include barlow(1rem);
+            text-align: center;
+            line-height: 25px;
+            color: $light-purple;
+            font-weight: normal;
+        }
+    }
+
+    &__circle{
+        @include wh(150px);
+        position: fixed;
+        border-radius: 50%;
+        background-color: white;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: 0;
+        transform: translateY(50%);
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        text-decoration: none;
+        color: $black;
+
+        &__text{
+            font-family: 'Bellefair', serif;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            transition: margin 0.5s ease;
+        }
+    }
+}

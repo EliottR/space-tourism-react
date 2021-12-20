@@ -1,0 +1,55 @@
+.header{
+    margin: 1.5rem 1.5rem 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo{
+        @include wh(40px);
+    }
+    
+    &__hamburger{
+        @include wh(2rem);
+        color: #D0D6F9;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    &__nav {
+    position: fixed;
+    width: 16rem;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: transparent;
+    backdrop-filter: blur(5rem);
+    padding-top: 5rem;
+    padding-left: 2rem;
+    box-sizing: border-box;
+    z-index: 1;
+    transform: translateX(100%);
+
+        &__tab {
+            text-decoration: none;
+            text-transform: uppercase;
+            @include barlow(1rem, uppercase);
+            letter-spacing: 2.7px;
+            margin-bottom: 2rem;
+            color: white;
+            list-style: none;
+
+            &__index{
+                display: inline-block;
+                width: 1.5rem;
+            }            
+        }
+    }
+}
+
+.active{
+    font-weight: bold;
+    color: $light-purple;
+}
