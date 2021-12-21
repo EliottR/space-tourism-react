@@ -4,28 +4,25 @@ import { useNavigate } from "react-router-dom";
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { Power4 } from 'gsap';
 
+let revealTl = gsap.timeline();
+let reveal = gsap.utils.toArray('.gs_reveal_fromLeft');
+
+reveal.forEach((text, i) => {
+    revealTl.fromTo(text, {
+        opacity: 0
+    },
+
+        {
+            opacity: 1,
+            ease: Power4.easeInOut,
+            duration: 0.25
+        }
+    )
+});
 
 const Home = () => {
 
     let navigate = useNavigate();
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    let revealTl = gsap.timeline();
-    let reveal = gsap.utils.toArray('.gs_reveal_fromLeft');
-
-    reveal.forEach((text, i) => {
-        revealTl.fromTo(text, {
-            opacity: 0
-        },
-
-            {
-                opacity: 1,
-                ease: Power4.easeInOut,
-                duration: 0.25
-            }
-        )
-    });
 
     function changePage() {
 
