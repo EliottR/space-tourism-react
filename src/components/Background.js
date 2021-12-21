@@ -1,12 +1,15 @@
 import gsap from "gsap";
 import { useLocation } from "react-router-dom";
-// import '../styles/pages/background.css';
+import { useEffect } from "react";
 
 
 const Background = () => {
     const location = useLocation()
 
-    gsap.fromTo('body', { opacity: 0 }, { duration: 0.5, opacity: 1 })
+    useEffect(() => {
+        gsap.fromTo('body', { opacity: 0 }, { duration: 0.5, opacity: 1 })
+    }, []);
+
 
     switch (location.pathname) {
         case '/':

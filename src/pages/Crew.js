@@ -5,7 +5,9 @@ const Crew = () => {
     return (
         <>
             <Header />
-            <h1>Crew</h1>
+            <main>
+                <h1>Crew</h1>
+            </main>
         </>
     );
 };

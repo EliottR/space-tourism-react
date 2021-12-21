@@ -5,7 +5,9 @@ const Technology = () => {
     return (
         <>
             <Header />
-            <h1>Technology</h1>
+            <main>
+                <h1>Technology</h1>
+            </main>
         </>
     );
 };
