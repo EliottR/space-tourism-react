@@ -1,0 +1,56 @@
+.destination{
+
+    &__planets{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        // background-color: rgba(255, 255, 0, 0.212);
+        margin: 0 1.5rem;
+    
+        &__img{
+            @include wh(170px);
+        }
+    
+        &__name{
+            color: white;
+            @include bellefair(3.5rem);
+            font-weight: normal;
+        }
+    
+        &__description{
+            color: $light-purple;
+            @include barlow(15px);
+            font-weight: normal;
+            line-height: 25px;
+            text-align: center;
+        }
+    
+        &__separator{
+            width: 100%;
+            height: 1px;
+            background-color: #383B4B;
+            margin: 2rem 0;
+        }
+    }
+
+    &__switchPlanets{
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            margin: 1.25rem 0;
+
+        &__tab{
+            color: $light-purple;
+            list-style: none;
+            @include barlow(14px, uppercase);
+            letter-spacing: 2.36px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.activePlanets{
+    color: red;
+}

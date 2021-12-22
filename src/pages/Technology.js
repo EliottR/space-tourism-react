@@ -1,12 +1,13 @@
 import React from 'react';
 import Header from '../components/Header';
+import NamePage from '../components/NamePage';
 
 const Technology = () => {
     return (
         <>
             <Header />
             <main>
-                <h1>Technology</h1>
+                <NamePage index='03' text='technology' />
             </main>
         </>
     );

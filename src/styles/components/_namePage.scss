@@ -1,0 +1,15 @@
+.namePage{
+    color: white;
+    @include barlow(1rem, uppercase);
+    letter-spacing: 2.7px;
+    font-weight: normal;
+    text-align: center;
+    margin: 2rem 0;
+
+    p{
+        font-weight: bold;
+        opacity: 0.25;
+        display: inline;
+        margin-right: 0.5rem;
+    }
+}

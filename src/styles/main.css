@@ -3,10 +3,6 @@
   padding: 0;
 }
 
-h1 {
-  color: white;
-}
-
 .header {
   margin: 1.5rem 1.5rem 0 1.5rem;
   display: -webkit-box;
@@ -108,6 +104,24 @@ h1 {
   background-image: url("../assets/technology/background-technology-mobile.jpg");
 }
 
+.namePage {
+  color: white;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2.7px;
+  font-weight: normal;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.namePage p {
+  font-weight: bold;
+  opacity: 0.25;
+  display: inline;
+  margin-right: 0.5rem;
+}
+
 .home {
   margin-top: 5rem;
 }
@@ -180,5 +194,79 @@ h1 {
   margin-bottom: 1.5rem;
   -webkit-transition: margin 0.5s ease;
   transition: margin 0.5s ease;
+}
+
+.destination__planets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 1.5rem;
+}
+
+.destination__planets__img {
+  width: 170px;
+  height: 170px;
+}
+
+.destination__planets__name {
+  color: white;
+  font-family: 'Bellefair', serif;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-weight: normal;
+}
+
+.destination__planets__description {
+  color: #D0D6F9;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 15px;
+  text-transform: initial;
+  font-weight: normal;
+  line-height: 25px;
+  text-align: center;
+}
+
+.destination__planets__separator {
+  width: 100%;
+  height: 1px;
+  background-color: #383B4B;
+  margin: 2rem 0;
+}
+
+.destination__switchPlanets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  margin: 1.25rem 0;
+}
+
+.destination__switchPlanets__tab {
+  color: #D0D6F9;
+  list-style: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2.36px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.activePlanets {
+  color: red;
 }
 /*# sourceMappingURL=main.css.map */

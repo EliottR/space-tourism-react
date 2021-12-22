@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import Header from '../components/Header';
 import { useNavigate } from "react-router-dom";
 import { Power1 } from 'gsap';
-import { useRef, useEffect } from 'react';
+import { useEffect } from 'react';
 
 
 
@@ -30,9 +30,6 @@ const Home = () => {
         });
 
     }, []);
-
-    const revealRef = useRef(null);
-
 
     let navigate = useNavigate();
 
