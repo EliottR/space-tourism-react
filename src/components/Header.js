@@ -29,7 +29,9 @@ const Header = () => {
 
     return (
         <header className='header'>
-            <img className='header__logo' src={logo} alt="logo" />
+            <NavLink to='/'>
+                <img className='header__logo' src={logo} alt="logo" />
+            </NavLink>
             {open ? closeIcon : openIcon}
             <ul className='header__nav' ref={animationMenu}>
                 <NavLink to='/' end className={({ isActive }) => "header__nav__tab" + (isActive ? " active" : "")}><b className='header__nav__tab__index'>00</b> Home</NavLink>

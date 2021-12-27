@@ -244,6 +244,24 @@
   margin: 2rem 0;
 }
 
+.destination__planets__distance, .destination__planets__travelTime {
+  color: #D0D6F9;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2.36px;
+}
+
+.destination__planets__distance__text, .destination__planets__travelTime__text {
+  margin-top: 0.75rem;
+  margin-bottom: 2rem;
+  color: white;
+  font-family: 'Bellefair', serif;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
 .destination__switchPlanets {
   display: -webkit-box;
   display: -ms-flexbox;

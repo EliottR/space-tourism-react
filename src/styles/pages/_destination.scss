@@ -33,6 +33,19 @@
             background-color: #383B4B;
             margin: 2rem 0;
         }
+
+        &__distance, &__travelTime{
+            color: $light_purple;
+            @include barlow(14px, uppercase);
+            letter-spacing: 2.36px;
+
+            &__text{
+                margin-top: 0.75rem;
+                margin-bottom: 2rem;
+                color: white;
+                @include bellefair(1.75rem)
+            }
+        }
     }
 
     &__switchPlanets{

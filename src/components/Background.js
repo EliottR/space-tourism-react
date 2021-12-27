@@ -1,7 +1,6 @@
-import gsap from "gsap";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-
+import gsap from "gsap";
 
 const Background = () => {
     const location = useLocation()
@@ -38,11 +37,7 @@ const Background = () => {
             break;
     }
 
-    return (
-        <div>
-
-        </div>
-    );
+    return '';
 };
 
 export default Background;
