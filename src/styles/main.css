@@ -67,6 +67,12 @@
   margin-bottom: 2rem;
   color: white;
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__nav__tab__index {
@@ -74,9 +80,18 @@
   width: 1.5rem;
 }
 
-.active {
+.activeTab {
   font-weight: bold;
   color: #D0D6F9;
+}
+
+.activeTab:after {
+  position: absolute;
+  content: '';
+  height: 2rem;
+  width: 4px;
+  right: 0;
+  background-color: white;
 }
 
 .bg-home, .bg-destination, .bg-crew, .bg-technology {
@@ -211,11 +226,37 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 0 1.5rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .destination__planets__img {
   width: 170px;
   height: 170px;
+  -webkit-animation: rotatePlanet 20s infinite forwards linear;
+          animation: rotatePlanet 20s infinite forwards linear;
+}
+
+@-webkit-keyframes rotatePlanet {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotatePlanet {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 .destination__planets__name {
@@ -282,6 +323,12 @@
   letter-spacing: 2.36px;
   text-decoration: none;
   cursor: pointer;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.destination__switchPlanets__tab:hover {
+  text-shadow: 1px 1px 5px white;
 }
 
 .destination__switchPlanets__tab:after {
@@ -305,5 +352,157 @@
 
 .activePlanets:after {
   width: 100%;
+}
+
+.planetTransition-enter {
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+
+.planetTransition-enter-active {
+  -webkit-transform: rotateY(-30deg);
+          transform: rotateY(-30deg);
+}
+
+.planetTransition-enter-done {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+.planetTransition-exit {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+.planetTransition-exit-active {
+  -webkit-transform: rotateY(-89deg);
+          transform: rotateY(-89deg);
+}
+
+.planetTransition-exit-done {
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+}
+
+.crew__imageContainer {
+  width: 20.25rem;
+  height: 14rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  border-bottom: 1px solid #383B4B;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.crew__imageContainer__img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.crew__SwitchBullets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2rem 0;
+  gap: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.crew__SwitchBullets__bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #979797;
+  border-radius: 50%;
+  list-style: none;
+  cursor: pointer;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.crew__SwitchBullets__bullet:hover {
+  background-color: white;
+}
+
+.crew__details {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.crew__details__role {
+  color: white;
+  opacity: 0.5;
+  font-family: 'Bellefair', serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: center;
+}
+
+.crew__details__name {
+  color: white;
+  font-family: 'Bellefair', serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.crew__details__bio {
+  color: #D0D6F9;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  text-transform: initial;
+  line-height: 1.625rem;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 1.5rem;
+}
+
+.activeBullet {
+  background-color: white;
+}
+
+.peopleTransition-enter {
+  -webkit-transform: translateX(150%);
+          transform: translateX(150%);
+}
+
+.peopleTransition-enter-active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.peopleTransition-enter-done {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.peopleTransition-exit {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.peopleTransition-exit-active {
+  -webkit-transform: translateX(-149%);
+          transform: translateX(-149%);
+}
+
+.peopleTransition-exit-done {
+  -webkit-transform: translateX(-150%);
+          transform: translateX(-150%);
 }
 /*# sourceMappingURL=main.css.map */

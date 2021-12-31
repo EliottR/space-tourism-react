@@ -40,6 +40,8 @@
             margin-bottom: 2rem;
             color: white;
             list-style: none;
+            display: flex;
+            align-items: center;
 
             &__index{
                 display: inline-block;
@@ -49,7 +51,16 @@
     }
 }
 
-.active{
+.activeTab{
     font-weight: bold;
     color: $light-purple;
+    
+    &:after {
+        position: absolute;
+        content: '';
+        height: 2rem;
+        width: 4px;
+        right: 0;
+        background-color: white;
+    }
 }

@@ -1,0 +1,97 @@
+.crew{
+    &__imageContainer{
+        width: 20.25rem;
+        height: 14rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        border-bottom: 1px solid #383B4B;
+        transition: 0.4s;
+
+        &__img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    &__SwitchBullets{
+        display: flex;
+        margin: 2rem 0;
+        gap: 1rem;
+        justify-content: center;
+
+        &__bullet{
+            @include wh(10px);
+            background-color: #979797;
+            border-radius: 50%;
+            list-style: none;
+            cursor: pointer;
+            transition: 0.25s;
+
+            &:hover{
+                background-color: white;
+            }
+        }
+    }
+
+    &__details{
+        transition: 0.4s;
+
+        &__role{
+            color: white;
+            opacity: 0.5;
+            @include bellefair(1rem);
+            text-align: center;
+        }
+
+        &__name{
+            color: white;
+            @include bellefair(1.5rem);
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        &__bio{
+            color: $light-purple;
+            @include barlow(1rem);
+            line-height: 1.625rem;
+            font-weight: normal;
+            text-align: center;
+            margin: 0 1.5rem;
+        }
+    }
+}
+
+.activeBullet{
+    background-color: white;
+}
+
+.peopleTransition{    
+    &-enter{
+        transform: translateX(150%);
+        
+        &-active{
+            transform: translateX(0%);
+        }
+
+        &-done{
+            transform: translateX(0);
+        }
+    }
+
+    &-exit{
+        transform: translateX(0);
+
+        &-active{
+            transform: translateX(-149%);
+        }
+
+        &-done{
+            transform: translateX(-150%);
+        }
+    }
+}

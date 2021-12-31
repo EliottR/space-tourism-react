@@ -1,7 +1,6 @@
 {
   "destinations": [
     {
-      "key": 1,
       "name": "Moon",
       "images": {
         "png": "../assets/destination/image-moon.png",
@@ -12,7 +11,6 @@
       "travel": "3 days"
     },
     {
-      "key": 2,
       "name": "Mars",
       "images": {
         "png": "../assets/destination/image-mars.png",
@@ -23,7 +21,6 @@
       "travel": "9 months"
     },
     {
-      "key": 3,
       "name": "Europa",
       "images": {
         "png": "../assets/destination/image-europa.png",
@@ -34,7 +31,6 @@
       "travel": "3 years"
     },
     {
-      "key": 4,
       "name": "Titan",
       "images": {
         "png": "../assets/destination/image-titan.png",

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { SwitchTransition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import Header from '../components/Header';
 import NamePage from '../components/NamePage';
 import data from '../data/data';
-
 
 const obj = JSON.stringify(data);
 const json = JSON.parse(obj);
@@ -37,8 +38,6 @@ class Planets extends React.Component {
             array: array,
             index: i
         })
-
-
     }
 
     renderSwitchPlanet(i) {
@@ -61,22 +60,26 @@ class Planets extends React.Component {
         ];
 
         return (
-            <article className="destination__planets">
-                <img className="destination__planets__img" src={images[i]} alt="planet" />
-                <ul className='destination__switchPlanets' >
-                    {this.renderSwitchPlanet(0)}
-                    {this.renderSwitchPlanet(1)}
-                    {this.renderSwitchPlanet(2)}
-                    {this.renderSwitchPlanet(3)}
-                </ul>
-                <h2 className="destination__planets__name">{json.destinations[i].name}</h2>
-                <p className="destination__planets__description">{json.destinations[i].description}</p>
-                <div className="destination__planets__separator"></div>
-                <p className='destination__planets__distance'>avg. distance</p>
-                <h3 className="destination__planets__distance__text">{json.destinations[i].distance}</h3>
-                <p className='destination__planets__travelTime'>est. travel time</p>
-                <h3 className="destination__planets__travelTime__text">{json.destinations[i].travel}</h3>
-            </article>
+            <SwitchTransition>
+                <CSSTransition key={this.state.index} timeout={200} classNames="planetTransition">
+                    <article className="destination__planets" index={this.state.index}>
+                        <img className="destination__planets__img" src={images[i]} alt="planet" />
+                        <ul className='destination__switchPlanets' >
+                            {this.renderSwitchPlanet(0)}
+                            {this.renderSwitchPlanet(1)}
+                            {this.renderSwitchPlanet(2)}
+                            {this.renderSwitchPlanet(3)}
+                        </ul>
+                        <h2 className="destination__planets__name">{json.destinations[i].name}</h2>
+                        <p className="destination__planets__description">{json.destinations[i].description}</p>
+                        <div className="destination__planets__separator"></div>
+                        <p className='destination__planets__distance'>avg. distance</p>
+                        <h3 className="destination__planets__distance__text">{json.destinations[i].distance}</h3>
+                        <p className='destination__planets__travelTime'>est. travel time</p>
+                        <h3 className="destination__planets__travelTime__text">{json.destinations[i].travel}</h3>
+                    </article>
+                </CSSTransition>
+            </SwitchTransition>
         );
     }
 };

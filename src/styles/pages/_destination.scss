@@ -1,16 +1,25 @@
 .destination{
 
     &__planets{
-        // transform: translateX(-10%);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        // background-color: rgba(255, 255, 0, 0.212);
         margin: 0 1.5rem;
+        transition: 0.5s;
     
         &__img{
             @include wh(170px);
+            animation: rotatePlanet 20s infinite forwards linear;
+
+            @keyframes rotatePlanet {
+                from{
+                    transform: rotate(0);
+                }
+                to{
+                    transform: rotate(360deg);
+                }
+            }
         }
     
         &__name{
@@ -54,6 +63,8 @@
             width: 100%;
             margin: 1.25rem 0;
 
+            
+
         &__tab{
             color: $light-purple;
             list-style: none;
@@ -61,6 +72,11 @@
             letter-spacing: 2.36px;
             text-decoration: none;
             cursor: pointer;
+            transition: 0.25s;
+
+            &:hover{
+                text-shadow: 1px 1px 5px white;
+            }
 
             &:after {
                 content: '';
@@ -84,5 +100,29 @@
 
     &:after {
         width: 100%;
+    }
+}
+
+.planetTransition{    
+    &-enter{
+        transform: rotateY(90deg);
+        
+        &-active{
+            transform: rotateY(-30deg);
+        }
+        &-done{
+            transform: rotateY(0);
+        }
+    }
+
+    &-exit{
+        transform: rotateY(0);
+
+        &-active{
+            transform: rotateY(-89deg);
+        }
+        &-done{
+            transform: rotateY(-90deg);
+        }
     }
 }
