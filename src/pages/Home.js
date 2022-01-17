@@ -35,37 +35,43 @@ const Home = () => {
 
     function changePage() {
 
-        setTimeout(() => {
+        if (document.body.clientWidth < 768) {
+            setTimeout(() => {
+                navigate("/destination");
+            }, 900);
+
+
+            gsap.to('.home__circle__text', {
+                marginBottom: 0
+            }, 0)
+            gsap.to('.home__circle__text', {
+                opacity: 0,
+                duration: 0.5,
+                delay: 0.3
+            })
+            gsap.to('.home__text', {
+                opacity: 0,
+                duration: 0.2,
+                delay: 0.5
+            })
+
+            let tl = gsap.timeline();
+
+            tl.to('.home__circle', {
+                y: '-5rem'
+            })
+            tl.to('.home__circle', {
+                scale: 15,
+                transformOrigin: 'center center'
+            }, '-=0.1')
+            tl.to('.home__circle', {
+                opacity: 0
+            }, '-=0.2')
+        }
+
+        else {
             navigate("/destination");
-        }, 900);
-
-
-        gsap.to('.home__circle__text', {
-            marginBottom: 0
-        }, 0)
-        gsap.to('.home__circle__text', {
-            opacity: 0,
-            duration: 0.5,
-            delay: 0.3
-        })
-        gsap.to('.home__text', {
-            opacity: 0,
-            duration: 0.2,
-            delay: 0.5
-        })
-
-        let tl = gsap.timeline();
-
-        tl.to('.home__circle', {
-            y: '-5rem'
-        })
-        tl.to('.home__circle', {
-            scale: 15,
-            transformOrigin: 'center center'
-        }, '-=0.1')
-        tl.to('.home__circle', {
-            opacity: 0
-        }, '-=0.2')
+        }
     }
 
     return (

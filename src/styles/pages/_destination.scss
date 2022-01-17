@@ -7,6 +7,11 @@
         justify-content: space-between;
         margin: 0 1.5rem;
         transition: 0.5s;
+
+        &__transition {
+            transition: 0.5s; 
+            all: inherit;
+        }
     
         &__img{
             @include wh(170px);
@@ -43,16 +48,25 @@
             margin: 2rem 0;
         }
 
-        &__distance, &__travelTime{
-            color: $light_purple;
-            @include barlow(14px, uppercase);
-            letter-spacing: 2.36px;
+        &__details{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-            &__text{
-                margin-top: 0.75rem;
-                margin-bottom: 2rem;
-                color: white;
-                @include bellefair(1.75rem)
+            &__distance, &__travelTime{
+                text-align: center;
+                &__legend{
+                    color: $light_purple;
+                    @include barlow(14px, uppercase);
+                    letter-spacing: 2.36px;
+                }
+
+                &__text{
+                    margin-top: 0.75rem;
+                    margin-bottom: 2rem;
+                    color: white;
+                    @include bellefair(1.75rem)
+                }
             }
         }
     }
@@ -89,6 +103,49 @@
                 margin-top: 0.5rem;
                 background-color: white;
                 transition: 0.5s ease;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .destination{
+        margin: 0 6.125rem;
+
+        &__planets{
+            &__img{
+                @include wh(300px);
+            }
+
+            &__name{
+                @include bellefair(5rem);
+                margin-bottom: 0.5rem;
+            }
+        
+            &__description{
+                @include barlow(1rem);
+                line-height: 1.75rem;
+            }
+        
+            &__separator{
+                margin: 3rem 0 1.75rem 0;
+            }
+
+            &__details{
+                flex-direction: row;
+                gap: 5rem;
+            }
+        }
+
+        &__switchPlanets{
+            justify-content: initial;
+            gap: 2.25rem;
+            width: initial;
+            margin: 3.25rem 0 2rem 0;
+
+            &__tab{
+                @include barlow(1rem, uppercase);
+                letter-spacing: 2.7px;
             }
         }
     }

@@ -8,13 +8,6 @@ import data from '../data/data';
 const obj = JSON.stringify(data);
 const json = JSON.parse(obj);
 
-const images = [
-    require('../assets/crew/image-douglas-hurley.png'),
-    require("../assets/crew/image-mark-shuttleworth.png"),
-    require("../assets/crew/image-victor-glover.png"),
-    require("../assets/crew/image-anousheh-ansari.png")
-]
-
 const ImageCrew = (props) => {
     return (
         <div className='crew__imageContainer'>
@@ -65,12 +58,6 @@ class Crew extends Component {
         })
     }
 
-    renderSwitchBullet(i) {
-        return (
-            <Bullets onClick={() => this.handleClick(i)} className={this.state.array[i]} />
-        )
-    }
-
     render(i = this.state.index) {
         return (
             <>
@@ -79,14 +66,13 @@ class Crew extends Component {
                     <NamePage index='02' text="meet your crew" />
                     <SwitchTransition>
                         <CSSTransition key={this.state.index} timeout={400} classNames="peopleTransition">
-                            <ImageCrew image={images[i]} />
+                            <ImageCrew image={require('../assets' + json.crew[i].images.png)} />
                         </CSSTransition>
                     </SwitchTransition>
                     <ul className='crew__SwitchBullets'>
-                        {this.renderSwitchBullet(0)}
-                        {this.renderSwitchBullet(1)}
-                        {this.renderSwitchBullet(2)}
-                        {this.renderSwitchBullet(3)}
+                        {json.crew.map((i, key) => {
+                            return <Bullets key={key} onClick={() => this.handleClick(key)} className={this.state.array[key]} />
+                        })}
                     </ul>
                     <SwitchTransition>
                         <CSSTransition key={this.state.index} timeout={400} classNames="peopleTransition">

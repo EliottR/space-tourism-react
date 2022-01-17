@@ -64,3 +64,56 @@
         background-color: white;
     }
 }
+
+@media screen and (min-width: 768px) {
+    .header{
+        height: 6rem;
+        margin: 1.5rem 2.5rem 0 2.5rem;
+        align-items: initial;
+    
+        &__logo{
+            @include wh(3rem);
+        }
+        
+        &__hamburger{
+            display: none;
+        }
+    
+        &__nav {
+        position: absolute;
+        width: 450px;
+        height: 6rem;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding-top: 0;
+        padding-left: 0;
+        transform: translate(0) !important;
+        padding-top: 2.5rem;
+    
+            &__tab {
+                margin-bottom: 0;
+                display: block;
+    
+                &__index{
+                    display: none;
+                }            
+            }
+        }
+    }
+    
+    .activeTab{
+        font-weight: normal;
+        color: white;
+        
+        &:after {
+            position: relative;
+            content: '';
+            height: 3px;
+            width: inherit;
+            bottom: 0;
+            display: block;
+            background-color: white;
+            margin-top: 34px;
+        }
+    }
+}

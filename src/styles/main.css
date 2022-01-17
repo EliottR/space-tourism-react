@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+html {
+  font-size: 16px;
+}
+
 .header {
   margin: 1.5rem 1.5rem 0 1.5rem;
   display: -webkit-box;
@@ -94,6 +98,61 @@
   background-color: white;
 }
 
+@media screen and (min-width: 768px) {
+  .header {
+    height: 6rem;
+    margin: 1.5rem 2.5rem 0 2.5rem;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+  }
+  .header__logo {
+    width: 3rem;
+    height: 3rem;
+  }
+  .header__hamburger {
+    display: none;
+  }
+  .header__nav {
+    position: absolute;
+    width: 450px;
+    height: 6rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    padding-top: 0;
+    padding-left: 0;
+    -webkit-transform: translate(0) !important;
+            transform: translate(0) !important;
+    padding-top: 2.5rem;
+  }
+  .header__nav__tab {
+    margin-bottom: 0;
+    display: block;
+  }
+  .header__nav__tab__index {
+    display: none;
+  }
+  .activeTab {
+    font-weight: normal;
+    color: white;
+  }
+  .activeTab:after {
+    position: relative;
+    content: '';
+    height: 3px;
+    width: inherit;
+    bottom: 0;
+    display: block;
+    background-color: white;
+    margin-top: 34px;
+  }
+}
+
 .bg-home, .bg-destination, .bg-crew, .bg-technology {
   background-repeat: no-repeat;
   background-position: center;
@@ -135,6 +194,21 @@
   opacity: 0.25;
   display: inline;
   margin-right: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .namePage {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 3.38px;
+    text-align: initial;
+    margin: 2.5rem 0 3.75rem 2.5rem;
+  }
+  .namePage p {
+    font-weight: bold;
+    margin-right: 1.25rem;
+  }
 }
 
 .home {
@@ -205,10 +279,51 @@
 
 .home__circle__text {
   font-family: 'Bellefair', serif;
+  font-size: 1rem;
   text-transform: uppercase;
+  font-weight: normal;
   margin-bottom: 1.5rem;
   -webkit-transition: margin 0.5s ease;
   transition: margin 0.5s ease;
+}
+
+@media screen and (min-width: 768px) {
+  .home {
+    margin-top: 6rem;
+  }
+  .home__text {
+    gap: 1.25rem;
+  }
+  .home__text__h2 {
+    font-size: 1.25rem;
+  }
+  .home__text__h1 {
+    font-size: 150px;
+    line-height: 150px;
+  }
+  .home__text__h3 {
+    line-height: 28px;
+    margin: 0 10.125rem;
+    font-size: 1rem;
+  }
+  .home__circle {
+    width: 242px;
+    height: 242px;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    position: relative;
+    margin-top: 9.75rem;
+    margin-bottom: 90px;
+  }
+  .home__circle__text {
+    font-family: 'Bellefair', serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 0;
+    -webkit-transition: margin 0.5s ease;
+    transition: margin 0.5s ease;
+  }
 }
 
 .destination__planets {
@@ -228,6 +343,12 @@
   margin: 0 1.5rem;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+.destination__planets__transition {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  all: inherit;
 }
 
 .destination__planets__img {
@@ -285,7 +406,24 @@
   margin: 2rem 0;
 }
 
-.destination__planets__distance, .destination__planets__travelTime {
+.destination__planets__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.destination__planets__details__distance, .destination__planets__details__travelTime {
+  text-align: center;
+}
+
+.destination__planets__details__distance__legend, .destination__planets__details__travelTime__legend {
   color: #D0D6F9;
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 14px;
@@ -293,7 +431,7 @@
   letter-spacing: 2.36px;
 }
 
-.destination__planets__distance__text, .destination__planets__travelTime__text {
+.destination__planets__details__distance__text, .destination__planets__details__travelTime__text {
   margin-top: 0.75rem;
   margin-bottom: 2rem;
   color: white;
@@ -345,6 +483,53 @@
   transition: 0.5s ease;
 }
 
+@media screen and (min-width: 768px) {
+  .destination {
+    margin: 0 6.125rem;
+  }
+  .destination__planets__img {
+    width: 300px;
+    height: 300px;
+  }
+  .destination__planets__name {
+    font-family: 'Bellefair', serif;
+    font-size: 5rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+  }
+  .destination__planets__description {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    text-transform: initial;
+    line-height: 1.75rem;
+  }
+  .destination__planets__separator {
+    margin: 3rem 0 1.75rem 0;
+  }
+  .destination__planets__details {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 5rem;
+  }
+  .destination__switchPlanets {
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+    gap: 2.25rem;
+    width: initial;
+    margin: 3.25rem 0 2rem 0;
+  }
+  .destination__switchPlanets__tab {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2.7px;
+  }
+}
+
 .activePlanets {
   color: white;
   text-shadow: 1px 1px 5px white;
@@ -382,6 +567,111 @@
 .planetTransition-exit-done {
   -webkit-transform: rotateY(-90deg);
           transform: rotateY(-90deg);
+}
+
+.technology__details__imageContainer {
+  width: 100%;
+  margin-bottom: 2.125rem;
+}
+
+.technology__details__switchTechnology {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1.625rem;
+}
+
+.technology__details__switchTechnology__tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-family: 'Bellefair', serif;
+  font-size: 16;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.technology__details__texts {
+  margin: 0 1.5rem;
+  text-align: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.technology__details__texts__terminology {
+  color: #D0D6F9;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 2.37px;
+  margin-bottom: 9px;
+}
+
+.technology__details__texts__h2 {
+  font-family: 'Bellefair', serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.technology__details__texts__description {
+  color: #D0D6F9;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  text-transform: initial;
+  line-height: 1.5rem;
+}
+
+.activeTechnology {
+  background-color: white;
+  color: #0B0D17;
+  border: none;
+}
+
+.technologyTransition-enter {
+  opacity: 0;
+}
+
+.technologyTransition-enter-active {
+  opacity: 1;
+}
+
+.technologyTransition-enter-done {
+  opacity: 1;
+}
+
+.technologyTransition-exit {
+  opacity: 1;
+}
+
+.technologyTransition-exit-active {
+  opacity: 0;
+}
+
+.technologyTransition-exit-done {
+  opacity: 0;
 }
 
 .crew__imageContainer {
@@ -470,6 +760,62 @@
   font-weight: normal;
   text-align: center;
   margin: 0 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .crew {
+    display: -ms-grid;
+    display: grid;
+  }
+  .crew__imageContainer {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    border-bottom: 1px solid #383B4B;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .crew__SwitchBullets {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin: 2.5rem 0;
+    gap: 1rem;
+  }
+  .crew__details {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .crew__details__role {
+    font-family: 'Bellefair', serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+  .crew__details__name {
+    font-family: 'Bellefair', serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+  .crew__details__bio {
+    margin: 0 9.68rem;
+  }
 }
 
 .activeBullet {

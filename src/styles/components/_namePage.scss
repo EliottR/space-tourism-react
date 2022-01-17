@@ -13,3 +13,17 @@
         margin-right: 0.5rem;
     }
 }
+
+@media screen and (min-width: 768px) {
+    .namePage{
+        @include barlow(1.25rem, uppercase);
+        letter-spacing: 3.38px;
+        text-align: initial;
+        margin: 2.5rem 0 3.75rem 2.5rem;
+    
+        p{
+            font-weight: bold;
+            margin-right: 1.25rem;
+        }
+    }
+}

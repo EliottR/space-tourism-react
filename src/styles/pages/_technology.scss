@@ -1,0 +1,88 @@
+.technology{
+    
+    &__details{
+        &__imageContainer{
+            width: 100%;
+            margin-bottom: 2.125rem;
+        }
+
+        &__switchTechnology{
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 1.625rem;;
+
+            &__tab{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                @include wh(2.5rem);
+                @include bellefair(16);
+                color: white;
+                background-color: transparent;
+                cursor: pointer;
+                border: 1px solid rgba(255, 255, 255, 0.25);
+                box-sizing: border-box;
+            }
+        }
+
+        &__texts{
+            margin: 0 1.5rem;
+            text-align: center;
+            transition: 0.5s;
+
+            &__terminology{
+                color: $light-purple;
+                @include barlow(0.875rem, uppercase);
+                letter-spacing: 2.37px;
+                margin-bottom: 9px;
+            }
+
+            &__h2{
+                @include bellefair(1.5rem);
+                color: white;
+                margin-bottom: 1rem;
+            }
+
+            &__description{
+                color: $light-purple;
+                @include barlow(1rem);
+                line-height: 1.5rem;
+            }
+        }
+    }
+}
+
+.activeTechnology{
+    background-color: white;
+    color: $black;
+    border: none;
+}
+
+.technologyTransition{    
+    &-enter{
+        opacity: 0;
+        
+        &-active{
+            opacity: 1;
+        }
+
+        &-done{
+            opacity: 1;
+        }
+    }
+
+    &-exit{
+        opacity: 1;
+
+        &-active{
+            opacity: 0;
+        }
+
+        &-done{
+            opacity: 0;
+        }
+    }
+}

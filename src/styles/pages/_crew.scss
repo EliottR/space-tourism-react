@@ -66,6 +66,48 @@
     }
 }
 
+@media screen and (min-width: 768px) {
+    .crew{
+        display: grid;
+
+        &__imageContainer{
+            order: 3;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            border-bottom: 1px solid #383B4B;
+            transition: 0.4s;
+        }
+    
+        &__SwitchBullets{
+            order: 2;
+            margin: 2.5rem 0;
+            gap: 1rem;
+        }
+    
+        &__details{
+            order: 1;
+    
+            &__role{
+                @include bellefair(1.5rem);
+            }
+    
+            &__name{
+                @include bellefair(2.5rem);
+            }
+    
+            &__bio{
+                margin: 0 9.68rem;
+            }
+        }
+    }
+}
+
 .activeBullet{
     background-color: white;
 }
