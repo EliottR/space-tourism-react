@@ -100,7 +100,7 @@ html {
 
 @media screen and (min-width: 768px) {
   .header {
-    height: 6rem;
+    height: 4.5rem;
     margin: 1.5rem 2.5rem 0 2.5rem;
     -webkit-box-align: initial;
         -ms-flex-align: initial;
@@ -129,6 +129,7 @@ html {
     -webkit-transform: translate(0) !important;
             transform: translate(0) !important;
     padding-top: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.04);
   }
   .header__nav__tab {
     margin-bottom: 0;
@@ -600,7 +601,7 @@ html {
   width: 2.5rem;
   height: 2.5rem;
   font-family: 'Bellefair', serif;
-  font-size: 16;
+  font-size: 1rem;
   text-transform: uppercase;
   font-weight: normal;
   color: white;
@@ -642,6 +643,56 @@ html {
   font-size: 1rem;
   text-transform: initial;
   line-height: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .technology__details__imageContainer {
+    margin-bottom: 3.5rem;
+  }
+  .technology__details__switchTechnology {
+    margin-bottom: 2.75rem;
+  }
+  .technology__details__switchTechnology__tab {
+    width: 3.75rem;
+    height: 3.75rem;
+    font-family: 'Bellefair', serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .technology__details__texts {
+    margin: 0 6.8rem;
+    margin-bottom: 6rem;
+  }
+  .technology__details__texts__terminology {
+    color: #D0D6F9;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2.7px;
+    margin-bottom: unset;
+  }
+  .technology__details__texts__h2 {
+    font-family: 'Bellefair', serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: white;
+    margin: 1rem 0;
+  }
+  .technology__details__texts__description {
+    color: #D0D6F9;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    text-transform: initial;
+    line-height: 1.5rem;
+  }
 }
 
 .activeTechnology {
@@ -773,21 +824,6 @@ html {
             order: 3;
     width: 100%;
     height: 100%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    border-bottom: 1px solid #383B4B;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
   }
   .crew__SwitchBullets {
     -webkit-box-ordinal-group: 3;

@@ -19,7 +19,7 @@
                 align-items: center;
                 border-radius: 50%;
                 @include wh(2.5rem);
-                @include bellefair(16);
+                @include bellefair(1rem);
                 color: white;
                 background-color: transparent;
                 cursor: pointer;
@@ -50,6 +50,54 @@
                 color: $light-purple;
                 @include barlow(1rem);
                 line-height: 1.5rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .technology{
+        &__details{
+            &__imageContainer{
+                margin-bottom: 3.5rem;
+            }
+
+            &__switchTechnology{
+                margin-bottom: 2.75rem;
+    
+                &__tab{
+                    @include wh(3.75rem);
+                    @include bellefair(1.5rem);
+                    color: white;
+                    background-color: transparent;
+                    cursor: pointer;
+                    border: 1px solid rgba(255, 255, 255, 0.25);
+                    box-sizing: border-box;
+                }
+            }
+
+            &__texts{
+                margin: 0 6.8rem;
+                margin-bottom: 6rem;
+    
+                &__terminology{
+                    color: $light-purple;
+                    @include barlow(1rem, uppercase);
+                    letter-spacing: 2.7px;
+                    margin-bottom: unset;
+                }
+    
+                &__h2{
+                    @include bellefair(2.5rem);
+                    color: white;
+                    margin: 1rem 0;
+                }
+    
+                &__description{
+                    color: $light-purple;
+                    @include barlow(1rem);
+                    line-height: 1.5rem;
+                }
             }
         }
     }
