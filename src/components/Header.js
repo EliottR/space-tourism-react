@@ -33,6 +33,7 @@ const Header = () => {
                 <img className='header__logo' src={logo} alt="logo" />
             </NavLink>
             {open ? closeIcon : openIcon}
+            <div className='header__line'></div>
             <ul className='header__nav' ref={animationMenu}>
                 <NavLink to='/' end className={({ isActive }) => "header__nav__tab" + (isActive ? " activeTab" : "")}><b className='header__nav__tab__index'>00</b> Home</NavLink>
                 <NavLink to='/destination' end className={({ isActive }) => "header__nav__tab" + (isActive ? " activeTab" : "")}><b className='header__nav__tab__index'>01</b> Destination</NavLink>

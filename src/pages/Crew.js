@@ -62,23 +62,25 @@ class Crew extends Component {
         return (
             <>
                 <Header />
+                <NamePage index='02' text="meet your crew" />
                 <main className='crew'>
-                    <NamePage index='02' text="meet your crew" />
                     <SwitchTransition>
                         <CSSTransition key={this.state.index} timeout={400} classNames="peopleTransition">
                             <ImageCrew image={require('../assets' + json.crew[i].images.png)} />
                         </CSSTransition>
                     </SwitchTransition>
-                    <ul className='crew__SwitchBullets'>
-                        {json.crew.map((i, key) => {
-                            return <Bullets key={key} onClick={() => this.handleClick(key)} className={this.state.array[key]} />
-                        })}
-                    </ul>
-                    <SwitchTransition>
-                        <CSSTransition key={this.state.index} timeout={400} classNames="peopleTransition">
-                            <People role={json.crew[i].role} name={json.crew[i].name} bio={json.crew[i].bio} />
-                        </CSSTransition>
-                    </SwitchTransition>
+                    <div className='crew__desktop'>
+                        <ul className='crew__SwitchBullets'>
+                            {json.crew.map((i, key) => {
+                                return <Bullets key={key} onClick={() => this.handleClick(key)} className={this.state.array[key]} />
+                            })}
+                        </ul>
+                        <SwitchTransition>
+                            <CSSTransition key={this.state.index} timeout={400} classNames="peopleTransition">
+                                <People role={json.crew[i].role} name={json.crew[i].name} bio={json.crew[i].bio} />
+                            </CSSTransition>
+                        </SwitchTransition>
+                    </div>
                 </main>
             </>
         );

@@ -93,3 +93,66 @@
         }
     }
 }
+
+@media screen and (min-width: 1200px) {
+    .home{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin: 0 10.25rem;
+        margin-top: 9rem;
+        margin-bottom: 5rem;
+
+        &__text{
+            gap: 1.5rem;
+            width: 28.125rem;
+            margin: unset;
+
+            &__h2{
+                font-size: 1.75rem; 
+                text-align: initial;
+            }
+
+            &__h1{
+                font-size: 150px;
+                line-height: 150px;
+                text-align: initial;
+            }
+
+            &__h3{
+                line-height: 28px;
+                margin: unset;
+                font-size: 1.125rem;
+                text-align: initial;
+            }
+        }
+
+        &__circle{
+                @include wh(274px);
+                transform: translateY(0);
+                position: relative;
+                margin: unset;
+
+                &::after{
+                    @include wh(450px);
+                    content: '';
+                    position: absolute;
+                    background-color: white;
+                    opacity: 0.136;
+                    border-radius: 50%;
+                    transition: 0.4s ease-in-out;
+                    transform: scale(0);
+                }
+
+                &:hover:after{
+                    transform: scale(1);
+                }
+
+                &__text{
+                    @include bellefair(2rem);
+                    margin-bottom: 0;
+                    transition: margin 0.5s ease;
+                }
+        }
+    }
+}

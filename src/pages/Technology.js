@@ -9,8 +9,6 @@ const obj = JSON.stringify(data);
 const json = JSON.parse(obj);
 
 function SwitchTechnology(props) {
-    var i = 1;
-
     return (
         <li onClick={props.onClick} className={"technology__details__switchTechnology__tab" + (props.className ? ' activeTechnology' : '')}>{props.text}</li>
     );
@@ -49,9 +47,19 @@ class Vehicle extends React.Component {
     }
 
     render(i = this.state.index) {
+
+        function selectImage() {
+            if (document.body.clientWidth > 1200) {
+                return require('../assets' + json.technology[i].images.portrait)
+            }
+            if (document.body.clientWidth < 1200) {
+                return require('../assets' + json.technology[i].images.landscape)
+            }
+        }
+
         return (
             <article className="technology__details" index={this.state.index}>
-                <ImageTechnology image={require('../assets' + json.technology[i].images.landscape)} />
+                <ImageTechnology image={selectImage()} />
                 <ul className='technology__details__switchTechnology' >
                     {json.technology.map((j, key) => {
                         return <SwitchTechnology key={key} className={this.state.array[key]} onClick={() => this.handleClick(--key)} text={++key} />

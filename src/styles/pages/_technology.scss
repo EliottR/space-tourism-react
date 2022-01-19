@@ -103,6 +103,70 @@
     }
 }
 
+@media screen and (min-width: 1200px) {
+    .technology{
+        &__details{
+            display: flex;
+            flex-direction: row-reverse;
+            width: 90vw;
+            float: right;
+            align-items: center;
+            justify-content: space-between;
+
+            &__imageContainer{
+                margin-bottom: unset;
+                width: 515px;
+                height: 527px;
+                background-size: cover;
+            }
+
+            &__switchTechnology{
+                gap: 2rem;
+                flex-direction: column;
+                order: 2;
+                margin-bottom: unset;
+    
+                &__tab{
+                    @include wh(3.75rem);
+                    @include bellefair(1.5rem);
+                    color: white;
+                    background-color: transparent;
+                    cursor: pointer;
+                    border: 1px solid rgba(255, 255, 255, 0.25);
+                    box-sizing: border-box;
+                }
+            }
+
+            &__texts{
+                text-align: left;
+                order: 1;
+                margin: 0;
+                width: 30rem;
+    
+                &__terminology{
+                    color: $light-purple;
+                    @include barlow(1rem, uppercase);
+                    letter-spacing: 2.7px;
+                    margin-bottom: unset;
+                }
+    
+                &__h2{
+                    @include bellefair(3.5rem);
+                    color: white;
+                    margin: 1rem 0;
+                }
+    
+                &__description{
+                    color: $light-purple;
+                    @include barlow(1rem);
+                    line-height: 1.5rem;
+                    width: 95%;
+                }
+            }
+        }
+    }
+}
+
 .activeTechnology{
     background-color: white;
     color: $black;

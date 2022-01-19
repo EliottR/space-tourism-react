@@ -44,29 +44,31 @@ class Planets extends React.Component {
         return (
             <article className="destination__planets" index={this.state.index}>
                 <img className="destination__planets__img" src={require('../assets' + json.destinations[i].images.png)} alt="planet" />
-                <ul className='destination__switchPlanets' >
-                    {json.destinations.map((i, key) => {
-                        return <SwitchPlanets key={key} className={this.state.array[key]} onClick={() => this.handleClick(key)} name={json.destinations[key].name} />
-                    })}
-                </ul>
-                <SwitchTransition>
-                    <CSSTransition key={this.state.index} timeout={200} classNames="planetTransition">
-                        <div className='destination__planets__transition'>
-                            <h2 className="destination__planets__name">{json.destinations[i].name}</h2>
-                            <p className="destination__planets__description">{json.destinations[i].description}</p>
-                            <div className="destination__planets__separator"></div>
-                            <div className='destination__planets__details'>
-                                <section className='destination__planets__details__distance'>
-                                    <p className='destination__planets__details__distance__legend'>avg. distance</p>
-                                    <h3 className="destination__planets__details__distance__text">{json.destinations[i].distance}</h3>
-                                </section>
-                                <section className='destination__planets__details__travelTime'>
-                                    <p className='destination__planets__details__travelTime__legend'>est. travel time</p>
-                                    <h3 className="destination__planets__details__travelTime__text">{json.destinations[i].travel}</h3>                                </section>
+                <div className='destination__planets__texts'>
+                    <ul className='destination__switchPlanets' >
+                        {json.destinations.map((i, key) => {
+                            return <SwitchPlanets key={key} className={this.state.array[key]} onClick={() => this.handleClick(key)} name={json.destinations[key].name} />
+                        })}
+                    </ul>
+                    <SwitchTransition>
+                        <CSSTransition key={this.state.index} timeout={200} classNames="planetTransition">
+                            <div className='destination__planets__transition'>
+                                <h2 className="destination__planets__name">{json.destinations[i].name}</h2>
+                                <p className="destination__planets__description">{json.destinations[i].description}</p>
+                                <div className="destination__planets__separator"></div>
+                                <div className='destination__planets__details'>
+                                    <section className='destination__planets__details__distance'>
+                                        <p className='destination__planets__details__distance__legend'>avg. distance</p>
+                                        <h3 className="destination__planets__details__distance__text">{json.destinations[i].distance}</h3>
+                                    </section>
+                                    <section className='destination__planets__details__travelTime'>
+                                        <p className='destination__planets__details__travelTime__legend'>est. travel time</p>
+                                        <h3 className="destination__planets__details__travelTime__text">{json.destinations[i].travel}</h3>                                </section>
+                                </div>
                             </div>
-                        </div>
-                    </CSSTransition>
-                </SwitchTransition>
+                        </CSSTransition>
+                    </SwitchTransition>
+                </div>
             </article >
         );
     }

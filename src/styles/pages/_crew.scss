@@ -100,13 +100,76 @@
     }
 }
 
+@media screen and (min-width: 1200px) {
+    .crew{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 1100px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+
+        &__desktop{
+            all:inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: unset;
+            margin: unset;
+        }
+
+        &__imageContainer{
+            order: 3;
+            width: auto;
+            max-height: 40rem;
+            border: none;
+
+            &__img{
+                max-height: 100%;
+                max-width: 100%;
+            }
+        }
+    
+        &__SwitchBullets{
+            order: 2;
+            margin: unset;
+            gap: 1rem;
+            margin-bottom: 6rem;
+        }
+    
+        &__details{
+            margin-top: 6rem;
+            width: 100%;
+            order: 1;
+    
+            &__role{
+                @include bellefair(2rem);
+                text-align: initial;
+            }
+    
+            &__name{
+                @include bellefair(3.5rem);
+                text-align: initial;
+            }
+    
+            &__bio{
+                margin: initial;
+                font-size: 1.175rem;
+                text-align: initial;
+                max-width: 27.75rem;
+            }
+        }
+    }
+}
+
 .activeBullet{
     background-color: white;
 }
 
 .peopleTransition{    
     &-enter{
-        transform: translateX(150%);
+        transform: translateX(100vw);
         
         &-active{
             transform: translateX(0%);
@@ -121,11 +184,11 @@
         transform: translateX(0);
 
         &-active{
-            transform: translateX(-149%);
+            transform: translateX(-100vw);
         }
 
         &-done{
-            transform: translateX(-150%);
+            transform: translateX(-100vw);
         }
     }
 }
